@@ -1,0 +1,16 @@
+﻿
+@model List<Voiture>
+<h4>Listes de kilometrage >25000 </h4>
+
+<ul>
+    @foreach (Voiture v in ViewBag.Voiture)
+    {
+        <li>
+            @v.Id -- @v.Kilometrage -- @v.Marque -- @v.Model -- @v.Type -- @v.AnneeImmatriculation
+
+
+        </li>
+    }
+</ul>
+
+<a asp-action="Ajouter" class="btn btn-info">Ajouter</a>

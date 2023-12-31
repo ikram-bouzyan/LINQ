@@ -1,0 +1,40 @@
+﻿@model Tp5_LINQ.Models.Voiture
+
+@{
+    ViewData["Title"] = "Ajouter Voiture";
+}
+
+<h1>Ajouter Voiture</h1>
+
+<form asp-controller="Voiture" asp-action="Ajouter" method="post">
+    <div class="form-group">
+        <label asp-for="Id "></label>
+        <input asp-for="Id" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Marque"></label>
+        <input asp-for="Marque" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Model"></label>
+        <input asp-for="Model" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Type"></label>
+        <input asp-for="Type" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="AnneeImmatriculation"></label>
+        <input asp-for="AnneeImmatriculation" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Kilometrage"></label>
+        <input asp-for="Kilometrage" class="form-control" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Ajouter Voiture</button>
+
+</form>
+

@@ -1,0 +1,44 @@
+﻿@model Tp5_LINQ.Models.Voiture
+@{
+    ViewData["Title"] = "Rechercher";
+}
+
+<h2>Rechercher</h2>
+<form asp-action="Rechercher" method="post">
+    <!-- Your input fields and sorting options here -->
+    <input name="marque" value="Recherche par Marque" />
+    <input value="Recherche" type="submit" />
+    <!-- Sorting options here -->
+
+    <h5>Trier par</h5>
+    <div class="form-check">
+        <input class="form-check-input" name="trier" type="radio" value="TAnnee" id="TAnnee">
+        <label class="form-check-label" for="TAnnee">
+            Année
+        </label>
+    </div>
+
+    <div class="col-sm-3">
+        <div class="form-check">
+            <input class="form-check-input" name="trier" type="radio" value="TKilo" id="TKilo">
+            <label class="form-check-label" for="TKilo">
+                Kilométrage
+            </label>
+        </div>
+    </div>
+
+    @if (ViewBag.lr != null)
+    {
+        <h5>Search Results:</h5>
+        <ul>
+            @foreach (Voiture voiture in ViewBag.lr)
+            {
+                <li>@voiture.Marque - @voiture.AnneeImmatriculation.Year - @voiture.Kilometrage</li>
+
+            }
+        </ul>
+    }
+
+</form>
+
+
